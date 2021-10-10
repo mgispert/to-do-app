@@ -1,5 +1,6 @@
-import { FormLabel, Input, Button } from "@chakra-ui/react";
+import { FormLabel, Input } from "@chakra-ui/react";
 import { useState } from "react";
+import { StyledButton } from "./styles";
 
 export const TaskBar = (props) => {
   const [inputValue, setInputValue] = useState("");
@@ -19,7 +20,7 @@ export const TaskBar = (props) => {
         placeholder={"Add your task here"}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <Button type="submit">Add Task</Button>
+      <StyledButton type="submit">Add Task</StyledButton>
     </form>
   );
 };
