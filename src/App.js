@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { TaskBar } from "./components/TaskBar";
+import { TaskList } from "./components/TaskList";
 
-function App() {
+export const App = () => {
+  const [toDoTasks, setToDoTasks] = useState([]);
+  const [doneTasks, setDoneTasks] = useState([]);
+
+  const handleOnAddTask = (valueInput) =>
+    setToDoTasks((oldToDoTasks) => [valueInput, ...oldToDoTasks]);
+
+  const handleOnClickToDoTask = (taskToMove) => {
+    const excludeDoneTaskFromToDoTasks = toDoTasks.filter(
+      (toDoTask) => toDoTask !== taskToMove
+    );
+    setToDoTasks(excludeDoneTaskFromToDoTasks);
+    setDoneTasks((oldDoneTasks) => [taskToMove, ...oldDoneTasks]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <h1>To Do App</h1>
+      <TaskBar onAddTask={handleOnAddTask} />
+      <TaskList
+        toDoTasks={toDoTasks}
+        doneTasks={doneTasks}
+        onClickToDoTask={handleOnClickToDoTask}
+      />
+    </ChakraProvider>
   );
-}
-
-export default App;
+};
