@@ -22,6 +22,16 @@ describe('TaskBar', () => {
         expect(mockOnAddTask).toBeCalledTimes(1);
         expect(mockOnAddTask).toBeCalledWith('input value');
     })
+    it('should set empty string as input value when form is submitted', () => {
+        const mockOnAddTask = jest.fn();
+        render(<TaskBar onAddTask={mockOnAddTask} />);
+        const input = screen.getByPlaceholderText(/add your task here/i);
+        fireEvent.change(input, { target: { value: 'input value' } })
+        expect(input).toHaveValue('input value');
+        const button = screen.getByText(/add task/i);
+        fireEvent.click(button);
+        expect(input).toHaveValue('');
+    })
 })
 
 
