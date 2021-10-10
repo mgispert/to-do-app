@@ -11,6 +11,7 @@ export const TaskBar = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.onAddTask(inputValue);
+        setInputValue('');
     }
 
     return (
