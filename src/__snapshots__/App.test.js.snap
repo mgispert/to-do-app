@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<div>
+  <h1>
+    To Do App
+  </h1>
+  <form
+    data-testid="taskBar"
+    id="text"
+  >
+    <label
+      class="chakra-form__label css-2gx1h6"
+    >
+      Write a task to add!
+    </label>
+    <input
+      class="chakra-input css-1c6j008"
+      placeholder="Add your task here"
+      type="text"
+      value=""
+    />
+    <button
+      class="chakra-button css-taj3dd"
+      type="submit"
+    >
+      Add Task
+    </button>
+  </form>
+  <div
+    class="chakra-tabs css-13o7eu2"
+    data-testid="taskList"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="chakra-tabs__tablist css-1xhq01z"
+      role="tablist"
+    >
+      <button
+        aria-controls="tabs-1--tabpanel-0"
+        aria-selected="true"
+        class="chakra-tabs__tab css-1ltezim"
+        data-index="0"
+        id="tabs-1--tab-0"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        To Do
+      </button>
+      <button
+        aria-controls="tabs-1--tabpanel-1"
+        aria-selected="false"
+        class="chakra-tabs__tab css-1ltezim"
+        data-index="1"
+        id="tabs-1--tab-1"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        Done
+      </button>
+    </div>
+    <div
+      class="chakra-tabs__tab-panels css-8atqhb"
+    >
+      <div
+        aria-labelledby="tabs-1--tab-0"
+        class="chakra-tabs__tab-panel css-a5mhaz"
+        id="tabs-1--tabpanel-0"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <ul
+          class="css-1xa84ef"
+          role="list"
+        />
+      </div>
+      <div
+        aria-labelledby="tabs-1--tab-1"
+        class="chakra-tabs__tab-panel css-a5mhaz"
+        hidden=""
+        id="tabs-1--tabpanel-1"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <ul
+          class="css-1xa84ef"
+          role="list"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
